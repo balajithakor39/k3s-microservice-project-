@@ -1,0 +1,6 @@
+- hosts: k3s
+  become: yes
+  tasks:
+    - name: Install K3s without default Traefik
+      shell: |
+        curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--disable traefik" sh -
